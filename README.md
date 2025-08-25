@@ -695,7 +695,7 @@
       try {
         if (window.fetch && window.location.hostname !== 'localhost') {
           // Assume backend at /summarize_me (optional)
-          const resp = await fetch('/summarize_me', {
+          const resp = await fetch('https://backend-wqir.onrender.com/summarize_me', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({bio})
@@ -861,7 +861,7 @@
         if (window.fetch && window.location.hostname !== 'localhost') {
           const formData = new FormData();
           formData.append('resume', file);
-          const resp = await fetch('/analyze_resume', {
+          const resp = await fetch('https://backend-wqir.onrender.com/anlyze_resume', {
             method: 'POST',
             body: formData
           });
@@ -899,7 +899,7 @@
       // Backend call (POST /career_match), fallback to placeholder
       try {
         if (window.fetch && window.location.hostname !== 'localhost') {
-          const resp = await fetch('/career_match', {
+          const resp = await fetch('https://backend-wqir.onrender.com/career_match', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({role})
@@ -956,7 +956,7 @@
       // Backend call (POST /ai_career_advice), fallback to placeholder
       try {
         if (window.fetch && window.location.hostname !== 'localhost') {
-          const resp = await fetch('/ai_career_advice', {
+          const resp = await fetch('https://backend-wqir.onrender.com/career_advice', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({goal})
